@@ -2,4 +2,12 @@
     width: 20px;
     height: 20px;
     background-color: #ffffff;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.branded {
+        background-color: #9acd32;
+    }
 }

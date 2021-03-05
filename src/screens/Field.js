@@ -10,7 +10,7 @@ const Field = (props) => {
         <div className='border border-dark mt-2 mb-2 h-75 bg-success'>
             {
                 sheepList !== null &&(sheepList.map(sheep => (
-                        <Sheep key={sheep.name} />
+                        <Sheep key={sheep.name} id={sheep.name}/>
                     ))
                 )
             }

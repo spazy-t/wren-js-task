@@ -11,6 +11,15 @@ const sheep = (state = {}, action) => {
                     ...action.newSheep
                 }
             }
+
+        case BRAND_SHEEP:
+            return {
+                ...state,
+                [action.sheepId]: {
+                    ...state[action.sheepId],
+                    branded: true
+                }
+            }
     
         default:
             return state
