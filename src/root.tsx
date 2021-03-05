@@ -3,11 +3,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import sheep from './reducers/sheep'
-//import logger from './middleware/logger'
+import middleware from './middleware'
 
 import App from './screens/App'
 
-const store = createStore(sheep)
+const store = createStore(sheep, middleware)
 
 export class Root extends React.Component {
     render() {
