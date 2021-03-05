@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import sheep from './reducers/sheep'
+import reducers from './reducers'
 import middleware from './middleware'
 
 import App from './screens/App'
 
-const store = createStore(sheep, middleware)
+const store = createStore(reducers, middleware)
 
 export class Root extends React.Component {
     render() {

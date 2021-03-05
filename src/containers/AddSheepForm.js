@@ -10,14 +10,15 @@ const AddSheepForm = (props) => {
     //called when submit button is pressed
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        console.log('handle submit')
 
         //dispatches sheep action to add to redux store and passes object with chosen name and gender
         addSheep({
             name: sheepName,
-            gender: evt.target.genderRadios.value
+            gender: evt.target.genderRadios.value,
+            branded: false
         })
 
+        //TODO: uncheck radio too
         //clears the sheep name and gender local state to clear the input text
         setSheepName('')
         setSheepGender(null)
