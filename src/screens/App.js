@@ -1,12 +1,14 @@
 import React from 'react'
 
 import Field from './Field'
+import Menu from '../containers/Menu'
 
 const App = () => {
     return(
-        <div className='vh-100 container'>
+        <main className='vh-100 container'>
+            <Menu />
             <Field />
-        </div>
+        </main>
     )
 }
 
