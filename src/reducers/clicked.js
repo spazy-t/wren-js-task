@@ -1,4 +1,4 @@
-import { SHEEP_CLICKED } from '../utils/constants'
+import { SHEEP_CLICKED, CLEAR_CLICKED } from '../utils/constants'
 
 //initiate array value to therefore add sheep when clicked
 const initArrState = {
@@ -14,6 +14,12 @@ const clicked = (state = initArrState, action) => {
             return {
                 ...state,
                 arr: [...state.arr, action.clickedSheep]
+            }
+
+        case CLEAR_CLICKED:
+            return {
+                ...state,
+                arr: []
             }
     
         default:

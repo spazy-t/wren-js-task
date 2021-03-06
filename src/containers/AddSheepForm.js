@@ -32,7 +32,7 @@ const AddSheepForm = (props) => {
                 value={ sheepName }
                 onChange={ evt => setSheepName(evt.target.value) } />
             <input
-                className='ml-2 mr-1'
+                className='ml-2 mr-1 gender-radio'
                 name='genderRadios'
                 type='radio'
                 id='male'
@@ -40,7 +40,7 @@ const AddSheepForm = (props) => {
                 onClick={ evt => setSheepGender(evt.target.value) } />
             <label htmlFor='male'>Male</label>
             <input
-                className='ml-2 mr-1'
+                className='ml-2 mr-1 gender-radio'
                 name='genderRadios'
                 type='radio'
                 id='female'

@@ -2,18 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import AddSheepForm from './AddSheepForm'
-import { brandSheep } from '../actions/sheep'
+import { handleBranding } from '../actions/shared'
 
 const Menu = (props) => {
-    const { toBrand, toMate, brandSheep } = props
+    const { toBrand, toMate, handleBranding } = props
     console.log('to brand:', toBrand)
     console.log('to mate:', toMate)
 
     const handleBrandClick = (evt) => {
         evt.preventDefault()
 
-        //TODO: call thunk to brand and then clear clicked list
-        brandSheep(toBrand)
+        //TODO: if already branded can't click brand button
+        handleBranding(toBrand)
     }
 
     return(
@@ -41,4 +41,4 @@ function mapStateToProps({ clicked }) {
     }
 }
 
-export default connect(mapStateToProps, { brandSheep })(Menu)
+export default connect(mapStateToProps, { handleBranding })(Menu)
