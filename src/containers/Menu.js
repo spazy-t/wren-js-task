@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import AddSheepForm from './AddSheepForm'
 import { handleBranding } from '../actions/shared'
+import { checkCompatibility } from '../utils/helpers'
 
 const Menu = (props) => {
     const { toBrand, toMate, handleBranding } = props
@@ -12,8 +13,21 @@ const Menu = (props) => {
     const handleBrandClick = (evt) => {
         evt.preventDefault()
 
-        //TODO: if already branded can't click brand button
+        //TODO: if already branded can't click said sheep
         handleBranding(toBrand)
+    }
+
+    //handle check on the two sheep to see if can mate and determine birth of new one
+    const handleMateClick = (evt) => {
+        evt.preventDefault()
+
+        //call helper method, which returns promise, to determine if sheep are compatible for mating
+        checkCompatibility(toMate)
+        .then(() => {
+            console.log('mating!')
+            //run 50% chance of new sheep
+        })
+        .catch(err => console.log('not compatible:', err))
     }
 
     return(
@@ -26,7 +40,8 @@ const Menu = (props) => {
                     onClick={ handleBrandClick }>BRAND</button>
                 <button
                     className='btn btn-warning ml-1'
-                    disabled={ toMate === null }>MATE</button>
+                    disabled={ toMate === null }
+                    onClick={ handleMateClick }>MATE</button>
             </div>
         </div>
     )
@@ -36,7 +51,7 @@ const Menu = (props) => {
 //if there are two sheep clicked, set the toMate prop -> enabling mate button
 function mapStateToProps({ clicked }) {
     return {
-        toBrand: clicked.arr.length === 1 ? clicked.arr[0] : null,
+        toBrand: clicked.arr.length === 1 ? clicked.arr[0].name : null,
         toMate: clicked.arr.length === 2 ? clicked.arr : null
     }
 }

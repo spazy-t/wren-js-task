@@ -5,7 +5,7 @@ import { sheepClicked } from '../actions/clicked'
 
 //component to display a sheep when added
 const Sheep = (props) => {
-    const { sheepClicked, id, sheepDetails } = props
+    const { sheepClicked, sheepDetails } = props
     //ref to enable addition of branded class if branded
     const sheep = useRef(null)
 
@@ -16,15 +16,26 @@ const Sheep = (props) => {
         }
     })
 
+    //TODO: stop a second click on same sheep
+
     //on click add the sheep's id to the clicked store state
     const handleClick = (evt) => {
         evt.preventDefault()
 
-        sheepClicked(id)
+        sheepClicked(sheepDetails)
     }
 
+    //TODO: make tooltip look nicer (init toolTip somehow?)
+
     return (
-        <div className='sheep' onClick={ handleClick } ref={ sheep }></div>
+        <div
+            className='sheep'
+            data-toggle='tooltip'
+            data-placement='right'
+            title={ `${sheepDetails.name}: ${sheepDetails.gender}` }
+            onClick={ handleClick }
+            ref={ sheep }>
+        </div>
     )
 }
 
