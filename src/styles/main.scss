@@ -1,18 +1,24 @@
+$sheepSizing: 40px;
+
 .gender-radio:hover {
     cursor: pointer;
 }
 
 .sheep {
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff;
+    width: $sheepSizing;
+    height: $sheepSizing;
+    fill: #fff;
 
     &:hover {
         cursor: pointer;
     }
 
     &.branded {
-        background-color: #9acd32;
+        fill: #9acd32;
         pointer-events: none;
     }
+}
+
+.field {
+    min-height: 50vh;
 }

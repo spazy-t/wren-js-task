@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
 
 import { sheepClicked, clearClicked } from '../actions/clicked'
+import SheepImg from '../images/sheep.svg'
 
 //component to display a sheep when added
 const Sheep = (props) => {
@@ -30,15 +31,16 @@ const Sheep = (props) => {
     }
 
     //TODO: make tooltip look nicer (init toolTip somehow?)
-
+    //sheep svg: https://www.svgrepo.com/svg/194496/sheep
     return (
         <div
-            className='sheep'
+            className='sheep m-1'
             data-toggle='tooltip'
             data-placement='right'
             title={ `${sheepDetails.name}: ${sheepDetails.gender}` }
             onClick={ handleClick }
             ref={ sheep }>
+                <SheepImg />
         </div>
     )
 }

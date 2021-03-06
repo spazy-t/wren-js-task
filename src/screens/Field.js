@@ -7,10 +7,10 @@ const Field = (props) => {
     const { sheepList } = props
 
     return (
-        <div className='border border-dark mt-2 mb-2 h-75 bg-success'>
+        <div className='border border-dark mt-2 mb-2 bg-success d-flex flex-wrap field'>
             {
                 sheepList !== null &&(sheepList.map(sheep => (
-                        <Sheep key={sheep.id} id={sheep.id}/>
+                        <Sheep key={sheep.id} id={sheep.id} />
                     ))
                 )
             }
