@@ -9,7 +9,6 @@ const NewSheepModal = (props) => {
     const { addSheep, gender } = props
     const [babyName, setBabyName] = useState('')
 
-    //TODO: make static modal, ie can't click out withou completing
     //handles adding new sheep to store state with passed in random gender and fallback name
     const handleSubmit = (evt) => {
         evt.preventDefault()
@@ -25,13 +24,13 @@ const NewSheepModal = (props) => {
     }
 
     return(
-        <div className='modal fade' id='newSheep' tabIndex='-1'>
+        <div className='modal fade' data-backdrop='static' id='newSheep' tabIndex='-1'>
             <div className='modal-dialog'>
                 <div className='modal-content'>
-                    <div className='modal-header'>
+                    <div className='modal-header d-flex justify-content-center'>
                         <h5>It's a {gender}</h5>
                     </div>
-                    <div className='modal-body'>
+                    <div className='modal-body d-flex justify-content-center'>
                         <form onSubmit={ handleSubmit }>
                             <input
                                 type='text'
