@@ -5,8 +5,6 @@ const initArrState = {
     arr: []
 }
 
-//TODO: clear clicked array on third sheep click before adding it to array
-
 //holds id of a sheep when clicked
 const clicked = (state = initArrState, action) => {
     switch (action.type) {

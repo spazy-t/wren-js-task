@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import $ from 'jquery'
 
 import AddSheepForm from './AddSheepForm'
 import { handleBranding } from '../actions/shared'
 import { addSheep } from '../actions/sheep'
 import { clearClicked } from '../actions/clicked'
 import { checkCompatibility } from '../utils/helpers'
+import NewSheepModal from './NewSheepModal'
 
 const Menu = (props) => {
     const { toBrand, toMate, handleBranding, addSheep, clearClicked } = props
+    const [babyGender, setBabyGender] = useState(null)
 
     const handleBrandClick = (evt) => {
         evt.preventDefault()
 
         handleBranding(toBrand)
+    }
+
+    //function to randomly generate a gender for the new sheep if made, is passed into modal component via local state
+    const handleBabySheep = () => {
+        const genderArray = ['male', 'female']
+
+        const randomGender = Math.floor(Math.random()*genderArray.length)
+        setBabyGender(genderArray[randomGender])
+
+        $('#newSheep').modal('show')
     }
 
     //handle check on the two sheep to see if can mate and determine birth of new one
@@ -23,24 +36,21 @@ const Menu = (props) => {
         //call helper method, which returns promise, to determine if sheep are compatible for mating
         checkCompatibility(toMate)
         .then(() => {
-            clearClicked()
-            //TODO: put new sheep info in a modal?
             console.log('mating!')
             //run 50% chance of new sheep
             const fiftyFifty = Math.random() < 0.5
             fiftyFifty < 0.5
                 ? console.log('no baby')
-                : addSheep({
-                    name: 'jnr',
-                    gender: 'male',
-                    branded: false
-                })
+                : handleBabySheep()
         })
         .catch(err => console.log('not compatible:', err))
+
+        clearClicked()
     }
 
     return(
         <div className='mt-2 d-flex justify-content-between'>
+            <NewSheepModal gender={ babyGender } />
             <AddSheepForm />
             <div>
                 <button
