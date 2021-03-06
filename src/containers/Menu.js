@@ -64,7 +64,7 @@ const Menu = (props) => {
 //if there are two sheep clicked, set the toMate prop -> enabling mate button
 function mapStateToProps({ clicked }) {
     return {
-        toBrand: clicked.arr.length === 1 ? clicked.arr[0].name : null,
+        toBrand: clicked.arr.length === 1 ? clicked.arr[0].id : null,
         toMate: clicked.arr.length === 2 ? clicked.arr : null
     }
 }

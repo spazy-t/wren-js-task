@@ -7,8 +7,9 @@ const sheep = (state = {}, action) => {
         case ADD_SHEEP:
             return {
                 ...state,
-                [action.newSheep.name]: {
-                    ...action.newSheep
+                [Object.keys(state).length + 1]: {
+                    ...action.newSheep,
+                    id: Object.keys(state).length + 1
                 }
             }
 
