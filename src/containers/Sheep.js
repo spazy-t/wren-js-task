@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { sheepClicked, clearClicked } from '../actions/clicked'
 import SheepImg from '../images/sheep.svg'
+import $ from 'jquery'
 
 //component to display a sheep when added
 const Sheep = (props) => {
@@ -15,6 +16,8 @@ const Sheep = (props) => {
         if(sheepDetails.branded) {
             sheep.current.classList.add('branded')
         }
+
+        $('.tip').tooltip('enable')
     })
 
     //TODO: when disabled allow rollover tooltip?
@@ -30,11 +33,10 @@ const Sheep = (props) => {
         sheepClicked(sheepDetails)
     }
 
-    //TODO: make tooltip look nicer (init toolTip somehow?)
     //sheep svg: https://www.svgrepo.com/svg/194496/sheep
     return (
         <div
-            className='sheep m-1'
+            className='sheep m-1 tip'
             data-toggle='tooltip'
             data-placement='right'
             title={ `${sheepDetails.name}: ${sheepDetails.gender}` }

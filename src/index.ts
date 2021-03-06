@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/main.scss'
-//TODO: maybe remove tooltip.js etc
 import 'jquery/dist/jquery'
 import 'bootstrap/js/dist/util.js'
 import 'bootstrap/dist/js/bootstrap'
