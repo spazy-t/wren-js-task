@@ -24,8 +24,13 @@ const Menu = (props) => {
         //call helper method, which returns promise, to determine if sheep are compatible for mating
         checkCompatibility(toMate)
         .then(() => {
+            //TODO: clear clicked
             console.log('mating!')
             //run 50% chance of new sheep
+            const fiftyFifty = Math.random() < 0.5
+            fiftyFifty < 0.5
+                ? console.log('no baby')
+                : console.log('a baby!')
         })
         .catch(err => console.log('not compatible:', err))
     }
