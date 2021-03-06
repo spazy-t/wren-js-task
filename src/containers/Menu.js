@@ -9,13 +9,10 @@ import { checkCompatibility } from '../utils/helpers'
 
 const Menu = (props) => {
     const { toBrand, toMate, handleBranding, addSheep, clearClicked } = props
-    console.log('to brand:', toBrand)
-    console.log('to mate:', toMate)
 
     const handleBrandClick = (evt) => {
         evt.preventDefault()
 
-        //TODO: if already branded can't click said sheep
         handleBranding(toBrand)
     }
 
@@ -26,7 +23,6 @@ const Menu = (props) => {
         //call helper method, which returns promise, to determine if sheep are compatible for mating
         checkCompatibility(toMate)
         .then(() => {
-            //TODO: clear clicked
             clearClicked()
             //TODO: put new sheep info in a modal?
             console.log('mating!')
