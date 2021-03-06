@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 
 import AddSheepForm from './AddSheepForm'
 import { handleBranding } from '../actions/shared'
+import { addSheep } from '../actions/sheep'
+import { clearClicked } from '../actions/clicked'
 import { checkCompatibility } from '../utils/helpers'
 
 const Menu = (props) => {
-    const { toBrand, toMate, handleBranding } = props
+    const { toBrand, toMate, handleBranding, addSheep, clearClicked } = props
     console.log('to brand:', toBrand)
     console.log('to mate:', toMate)
 
@@ -25,12 +27,18 @@ const Menu = (props) => {
         checkCompatibility(toMate)
         .then(() => {
             //TODO: clear clicked
+            clearClicked()
+            //TODO: put new sheep info in a modal?
             console.log('mating!')
             //run 50% chance of new sheep
             const fiftyFifty = Math.random() < 0.5
             fiftyFifty < 0.5
                 ? console.log('no baby')
-                : console.log('a baby!')
+                : addSheep({
+                    name: 'jnr',
+                    gender: 'male',
+                    branded: false
+                })
         })
         .catch(err => console.log('not compatible:', err))
     }
@@ -61,4 +69,4 @@ function mapStateToProps({ clicked }) {
     }
 }
 
-export default connect(mapStateToProps, { handleBranding })(Menu)
+export default connect(mapStateToProps, { handleBranding, addSheep, clearClicked })(Menu)

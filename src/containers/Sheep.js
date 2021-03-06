@@ -16,7 +16,7 @@ const Sheep = (props) => {
         }
     })
 
-    //TODO: stop a second click on same sheep
+    //TODO: when disabled allow rollover tooltip?
 
     //on click add the sheep's id to the clicked store state
     const handleClick = (evt) => {
