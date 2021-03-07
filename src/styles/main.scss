@@ -6,11 +6,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 $sheepSizing: 40px;
+$backgroundColour: linear-gradient(#c9f3ac, #f7f586);
 
 /*
 * general
 */
+html {
+    height: 100vh;
+}
+
 body {
+    background: $backgroundColour;
+    height: 100%;
     font-family: 'Fredoka One', cursive;
 }
 
@@ -49,7 +56,7 @@ body {
 * menu and form 
 */
 .menu-container {
-    margin-top: 1em;
+    padding-top: 1em;
 }
 
 .menu-btns {
