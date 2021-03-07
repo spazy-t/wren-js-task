@@ -16,7 +16,7 @@ const Menu = (props) => {
 
     const handleBrandClick = (evt) => {
         evt.preventDefault()
-
+        //call action to change relevant sheep in store to branded
         handleBranding(toBrand)
     }
 
@@ -24,9 +24,11 @@ const Menu = (props) => {
     const handleBabySheep = () => {
         const genderArray = ['male', 'female']
 
+        //randomly assign gender for new sheep
         const randomGender = Math.floor(Math.random()*genderArray.length)
         setBabyGender(genderArray[randomGender])
 
+        //jquery to enable and show modal
         $('#newSheep').modal('show')
     }
 
@@ -37,7 +39,6 @@ const Menu = (props) => {
         //call helper method, which returns promise, to determine if sheep are compatible for mating
         checkCompatibility(toMate)
         .then(() => {
-            console.log('mating!')
             //run 50% chance of new sheep
             const fiftyFifty = Math.random() < 0.5
             fiftyFifty < 0.5
@@ -49,9 +50,11 @@ const Menu = (props) => {
             $('#noSheep').modal('show')
         })
 
+        //calls action to clear stored clicked sheep -> removing highlight too
         clearClicked()
     }
 
+    //houses modals to show breeding success or failure, and two action button 'mate' + 'brand'
     return(
         <div className='menu-container'>
             <NewSheepModal gender={ babyGender } />

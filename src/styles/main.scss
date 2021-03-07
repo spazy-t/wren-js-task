@@ -2,10 +2,14 @@
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 
+//google font
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 $sheepSizing: 40px;
 
+/*
+* general
+*/
 body {
     font-family: 'Fredoka One', cursive;
 }
@@ -15,6 +19,9 @@ body {
     padding-right: 0 !important;
 }
 
+/*
+* Field and sheep
+*/
 .sheep {
     width: $sheepSizing;
     height: $sheepSizing;

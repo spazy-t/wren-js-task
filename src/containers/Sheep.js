@@ -32,7 +32,7 @@ const Sheep = (props) => {
     //on click add the sheep's id to the clicked store state
     const handleClick = (evt) => {
         evt.preventDefault()
-        //if the their are currently two sheep already clicked -> clear clicked arr in store and then add new one
+        //if there are currently two sheep already clicked -> clear clicked arr in store and then add new one
         if(clickedNumber === 2) {
             clearClicked()
         }
@@ -55,7 +55,7 @@ const Sheep = (props) => {
     )
 }
 
-//grab the details of the sheep, so if it's branded colour it green, also get passed in props from parent to cross reference it's id
+//grab the details of the sheep, so if it's branded -> colour it green, also get passed in props from parent to cross reference it's id
 function mapStateToProps({ sheep, clicked }, { id }) {
     return {
         sheepDetails: sheep[id],

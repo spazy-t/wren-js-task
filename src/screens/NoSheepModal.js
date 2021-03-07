@@ -9,6 +9,7 @@ const NoSheepModal = () => {
         })
     })
 
+    //non-static modal to show when breeding isn't successful
     return(
         <div className='modal' id='noSheep' tabIndex='-1'>
             <div className='modal-dialog'>

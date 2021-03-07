@@ -28,6 +28,7 @@ const AddSheepForm = (props) => {
         setSheepGender(null)
     }
 
+    //form to add new sheep one text and two radio inputs and a submit button
     return(
         <form className='add-sheep-form' onSubmit={ handleSubmit }>
             <input

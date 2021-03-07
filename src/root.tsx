@@ -12,7 +12,7 @@ const store = createStore(reducers, middleware)
 export class Root extends React.Component {
     render() {
         return (
-            <Provider store={store}>
+            <Provider store={ store }>
                 <App />
             </Provider>
         );

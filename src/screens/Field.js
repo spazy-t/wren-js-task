@@ -6,6 +6,7 @@ import Sheep from '../containers/Sheep'
 const Field = (props) => {
     const { sheepList } = props
 
+    //displays field and places in any sheep currently in the store state
     return (
         <div className='border border-dark mt-2 mb-2 bg-success d-flex flex-wrap justify-content-center align-items-center field'>
             {

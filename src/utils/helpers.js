@@ -1,13 +1,11 @@
+//helper to determine if two chosen sheep pass the breeding rules, passes back a promise
 export const checkCompatibility = (twoSheep) => {
-    console.log('check compat for:', twoSheep)
-
     return new Promise((res, rej) => {
         twoSheep.length === 2
             ? checkDetails()
             : rej('too many sheep')
 
         function checkDetails() {
-            console.log('check deets', twoSheep)
             let genderMatch = []
 
             //check if both sheep have the same gender, if they do add that sheep to genderMatch arr

@@ -4,7 +4,7 @@ import $ from 'jquery'
 
 import { addSheep } from '../actions/sheep'
 
-//modal component to decide name of new sheep from mating
+//modal component to decide name of new sheep from mating is successful
 const NewSheepModal = (props) => {
     const { addSheep, gender } = props
     const [babyName, setBabyName] = useState('')
@@ -30,9 +30,11 @@ const NewSheepModal = (props) => {
 
         //hide modal
         $('#newSheep').modal('hide')
+        //clear input for next time
         setBabyName('')
     }
 
+    //static modal that shows gender message and provides input to name new sheep
     return(
         <div className='modal' data-backdrop='static' id='newSheep' tabIndex='-1'>
             <div className='modal-dialog'>

@@ -1,5 +1,6 @@
-import { ADD_SHEEP, BRAND_SHEEP} from '../utils/constants'
+import { ADD_SHEEP, BRAND_SHEEP } from '../utils/constants'
 
+//holds data of each sheep in the field
 const sheep = (state = {}, action) => {
     switch (action.type) {
         case ADD_SHEEP:
