@@ -15,22 +15,23 @@ npm start
 The app is written using [TypeScript](https://www.typescriptlang.org/). The bundle is generated using [Webpack](https://webpack.js.org/) and the UI uses [ReactJS](https://reactjs.org/)
 
 ## Breeding rules
-* The sheep can't be branded, if they are you can't select them for breeding
-* One sheep must be male and one female
-* upon correctly selecting the sheep and pressing the mate button, there is a 50% chance of breeding via `handleMateClick` function in `Menu.js`
+* The sheep can't be branded, if they are you can't select them for breeding.
+* One sheep must be male and one female.
+* upon correctly selecting the sheep and pressing the mate button, there is a 50% chance of breeding via `handleMateClick` function in `Menu.js`, after
+passing the helper method `checkCompatibility` in `helpers.js`.
 
 ## Other features
-* When you select up to two sheep in the field they will be highlighted blue
-* Branding a sheep will highlight it green and will become unavailable for breeding
-* If breeding is successful a gender will be randomly selected for you but a modal will appear with an input to name the new sheep
-* If two incompatible sheep are selected for mating, or it is unsuccessful, a non static modal will appear informing as such, when the mate button is clicked
-* Responsive design has been added, in particular for the menu, so will display correctly on all main screen sizes
+* When you select up to two sheep in the field they will be highlighted blue.
+* Branding a sheep will highlight it green and will become unavailable for breeding.
+* If breeding is successful a gender will be randomly selected for you but a modal will appear with an input to name the new sheep.
+* If two incompatible sheep are selected for mating, or it is unsuccessful, a non static modal will appear informing as such, when the mate button is clicked.
+* Responsive design has been added, in particular for the menu, so will display correctly on all main screen sizes.
 
 ## Notes
 * At one point I was looking at randomly placing the sheep, and would have loved to have done this, but I realised I was spending too much time trying to get
-the placings recorded and referenced (held in a different branch locally). So, carried on with more important required functionality
-* I have utilised bootstrap, jquery, rect, redux, and some scss (in order to implement media breakpoints) to build the app
-* Other packages and webpack loaders were used to allow the use of the sheep svg and scss
+the placings recorded and referenced (held in a different branch locally). So, carried on with more important required functionality.
+* I have utilised bootstrap, jquery, rect, redux, and some scss (in order to implement media breakpoints) to build the app.
+* Other packages and webpack loaders were used to allow the use of the sheep svg and scss.
 
 ## Scenario
 The fields are green and Wren are venturing out to become a shepherd.
