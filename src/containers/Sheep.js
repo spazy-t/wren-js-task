@@ -19,7 +19,7 @@ const Sheep = (props) => {
 
         //when re-rendered check to see if current sheep id matches one in the clicked arr, if so -> highlight
         const matchClicked = clickedArr.filter(clicked => clicked.id === id)
-        matchClicked.length === 1
+        matchClicked.length >= 1
             ? sheep.current.classList.add('selected')
             : sheep.current.classList.remove('selected')
 

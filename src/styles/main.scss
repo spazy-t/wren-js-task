@@ -57,6 +57,10 @@ $sheepSizing: 40px;
     button {
         margin: 0.5em 0;
     }
+
+    label:hover {
+        cursor: pointer;
+    }
 }
 
 .sheep-name {
