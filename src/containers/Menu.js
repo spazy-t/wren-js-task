@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import $ from 'jquery'
 
@@ -8,10 +8,16 @@ import { addSheep } from '../actions/sheep'
 import { clearClicked } from '../actions/clicked'
 import { checkCompatibility } from '../utils/helpers'
 import NewSheepModal from './NewSheepModal'
+import NoSheepModal from '../screens/NoSheepModal'
 
 const Menu = (props) => {
     const { toBrand, toMate, handleBranding, addSheep, clearClicked } = props
     const [babyGender, setBabyGender] = useState(null)
+
+    /*useEffect(() => {
+        $('#noSheep').modal('show')
+    })*/
+    
 
     const handleBrandClick = (evt) => {
         evt.preventDefault()
@@ -40,10 +46,13 @@ const Menu = (props) => {
             //run 50% chance of new sheep
             const fiftyFifty = Math.random() < 0.5
             fiftyFifty < 0.5
-                ? console.log('no baby')
+                ? $('#noSheep').modal('show')
                 : handleBabySheep()
         })
-        .catch(err => console.log('not compatible:', err))
+        .catch(err => {
+            console.log('not compatible:', err)
+            $('#noSheep').modal('show')
+        })
 
         clearClicked()
     }
@@ -51,6 +60,7 @@ const Menu = (props) => {
     return(
         <div className='mt-2 d-flex justify-content-between'>
             <NewSheepModal gender={ babyGender } />
+            <NoSheepModal />
             <AddSheepForm />
             <div>
                 <button

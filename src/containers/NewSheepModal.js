@@ -28,7 +28,7 @@ const NewSheepModal = (props) => {
             <div className='modal-dialog'>
                 <div className='modal-content'>
                     <div className='modal-header d-flex justify-content-center'>
-                        <h5>It's a {gender}</h5>
+                        <h5>It's a { gender === 'male' ? 'boy' : 'girl' }</h5>
                     </div>
                     <div className='modal-body d-flex justify-content-center'>
                         <form onSubmit={ handleSubmit }>
