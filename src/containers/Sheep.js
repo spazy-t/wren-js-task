@@ -44,7 +44,8 @@ const Sheep = (props) => {
     //sheep svg: https://www.svgrepo.com/svg/194496/sheep
     return (
         <div
-            className='sheep m-1 tip'
+            className='sheep m-1 tip xyz-in'
+            xyz='fade down-100% ease-in-back'
             data-toggle='tooltip'
             data-placement='bottom'
             title={ `${sheepDetails.name}: ${sheepDetails.gender}` }

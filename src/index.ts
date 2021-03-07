@@ -5,6 +5,7 @@ import 'bootstrap/js/dist/util.js'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/js/dist/tooltip.js'
 import 'bootstrap/js/dist/modal.js'
+import '@animxyz/core'
 
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
