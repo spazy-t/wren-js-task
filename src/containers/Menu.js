@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import $ from 'jquery'
 
 import AddSheepForm from './AddSheepForm'
@@ -81,6 +82,14 @@ function mapStateToProps({ clicked }) {
         toBrand: clicked.arr.length === 1 ? clicked.arr[0].id : null,
         toMate: clicked.arr.length === 2 ? clicked.arr : null
     }
+}
+
+Menu.propTypes = {
+    toBrand: PropTypes.number,
+    toMate: PropTypes.array,
+    handleBranding: PropTypes.func.isRequired,
+    addSheep: PropTypes.func.isRequired,
+    clearClicked: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, { handleBranding, addSheep, clearClicked })(Menu)

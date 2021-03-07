@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import $ from 'jquery'
 
 import { addSheep } from '../actions/sheep'
@@ -57,6 +58,11 @@ const NewSheepModal = (props) => {
             </div>
         </div>
     )
+}
+
+NewSheepModal.propTypes = {
+    addSheep: PropTypes.func.isRequired,
+    gender: PropTypes.string
 }
 
 //pass in action to be dispatched, to add sheep to store state

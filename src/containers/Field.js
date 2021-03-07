@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import Sheep from './Sheep'
 
@@ -24,6 +25,10 @@ function mapStateToProps({ sheep }) {
     return {
         sheepList: sheep === null ? null : Object.values(sheep)
     }
+}
+
+Field.propTypes = {
+    sheepList: PropTypes.array
 }
 
 export default connect(mapStateToProps)(Field)

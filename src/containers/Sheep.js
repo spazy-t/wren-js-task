@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import $ from 'jquery'
 
 import { sheepClicked, clearClicked } from '../actions/clicked'
@@ -39,6 +40,7 @@ const Sheep = (props) => {
             //if there are currently two sheep already clicked -> clear clicked arr in store and then add new one
             if(clickedNumber === 2) {
                 clearClicked()
+                sheepClicked(sheepDetails)
             }
         }
     }
@@ -65,6 +67,15 @@ function mapStateToProps({ sheep, clicked }, { id }) {
         clickedNumber: clicked.arr.length,
         clickedArr: clicked.arr
     }
+}
+
+Sheep.propTypes = {
+    sheepClicked: PropTypes.func.isRequired,
+    clearClicked: PropTypes.func.isRequired,
+    clickedNumber: PropTypes.number,
+    clickedArr: PropTypes.array,
+    sheepDetails: PropTypes.object.isRequired,
+    id: PropTypes.number.isRequired
 }
 
 export default connect(mapStateToProps, { sheepClicked, clearClicked })(Sheep)

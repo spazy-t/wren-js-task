@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+
 import { addSheep } from '../actions/sheep'
 
 const AddSheepForm = (props) => {
@@ -66,6 +68,10 @@ const AddSheepForm = (props) => {
                 disabled={ sheepName === '' || sheepGender === null }>ADD</button>
         </form>
     )
+}
+
+AddSheepForm.propTypes = {
+    addSheep: PropTypes.func.isRequired
 }
 
 export default connect(null, { addSheep })(AddSheepForm)
