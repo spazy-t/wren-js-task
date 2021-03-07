@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Field from './Field'
+import Field from '../containers/Field'
 import Menu from '../containers/Menu'
 
 //TODO: add in proptypes

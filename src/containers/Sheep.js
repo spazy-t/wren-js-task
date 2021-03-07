@@ -32,13 +32,17 @@ const Sheep = (props) => {
     //on click add the sheep's id to the clicked store state
     const handleClick = (evt) => {
         evt.preventDefault()
-        //if there are currently two sheep already clicked -> clear clicked arr in store and then add new one
-        if(clickedNumber === 2) {
-            clearClicked()
-        }
         
         //add clicked sheep to clicked array
-        sheepClicked(sheepDetails)
+        const matchClicked = clickedArr.filter(clicked => clicked.id === id)
+        if(matchClicked.length === 0) {
+            sheepClicked(sheepDetails)
+
+            //if there are currently two sheep already clicked -> clear clicked arr in store and then add new one
+            if(clickedNumber === 2) {
+                clearClicked()
+            }
+        }
     }
 
     //sheep svg: https://www.svgrepo.com/svg/194496/sheep

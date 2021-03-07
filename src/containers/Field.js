@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Sheep from '../containers/Sheep'
+import Sheep from './Sheep'
 
 const Field = (props) => {
     const { sheepList } = props
