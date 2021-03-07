@@ -17,6 +17,7 @@ const Sheep = (props) => {
             sheep.current.classList.add('branded')
         }
 
+        //jquery to enable tooltips
         $('.tip').tooltip('enable')
     })
 
