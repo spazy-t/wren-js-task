@@ -53,17 +53,17 @@ const Menu = (props) => {
     }
 
     return(
-        <div className='mt-2 d-flex justify-content-between'>
+        <div className='menu-container'>
             <NewSheepModal gender={ babyGender } />
             <NoSheepModal />
             <AddSheepForm />
-            <div>
+            <div className='menu-btns'>
                 <button
                     className='btn btn-danger'
                     disabled={ toBrand === null }
                     onClick={ handleBrandClick }>BRAND</button>
                 <button
-                    className='btn btn-warning ml-1'
+                    className='btn btn-warning'
                     disabled={ toMate === null }
                     onClick={ handleMateClick }>MATE</button>
             </div>

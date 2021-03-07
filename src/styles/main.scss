@@ -1,3 +1,7 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
 $sheepSizing: 40px;
 
 .gender-radio:hover {
@@ -25,4 +29,66 @@ $sheepSizing: 40px;
 
 .field {
     min-height: 50vh;
+}
+
+/*
+* menu and form 
+*/
+.menu-container {
+    margin-top: 1em;
+}
+
+.menu-btns {
+    display: flex;
+    flex-direction: column;
+
+    button:first-child {
+        margin: 0 0 0.5em 0;
+    }
+}
+
+.add-sheep-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+        margin: 0.5em 0;
+    }
+}
+
+.sheep-name {
+    width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-btns {
+        flex-direction: row;
+
+        button:first-child {
+            margin:0 0.5em 0 0;
+        }
+    }
+    
+    .add-sheep-form {
+        justify-content: unset;
+
+        button {
+            margin-left: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    .sheep-name {
+        width: auto;
+    }
 }

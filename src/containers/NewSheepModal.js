@@ -37,7 +37,7 @@ const NewSheepModal = (props) => {
                                 placeholder='Enter new name'
                                 value={ babyName }
                                 onChange={ (evt) => setBabyName(evt.target.value) } />
-                            <button className='btn btn-dark ml-1' type='submit'>Add</button>
+                            <button className='btn btn-dark ml-1' type='submit'>ADD</button>
                         </form>
                     </div>
                 </div>

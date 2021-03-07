@@ -29,34 +29,39 @@ const AddSheepForm = (props) => {
     }
 
     return(
-        <form onSubmit={ handleSubmit }>
+        <form className='add-sheep-form' onSubmit={ handleSubmit }>
             <input
+                className='sheep-name'
                 type='text'
                 placeholder='New sheep name'
                 value={ sheepName }
                 onChange={ evt => setSheepName(evt.target.value) } />
-            <input
-                className='ml-2 mr-1 gender-radio'
-                name='genderRadios'
-                type='radio'
-                id='male'
-                value='male'
-                onClick={ evt => setSheepGender(evt.target.value) }
-                ref={ radioOne } />
-            <label htmlFor='male'>Male</label>
-            <input
-                className='ml-2 mr-1 gender-radio'
-                name='genderRadios'
-                type='radio'
-                id='female'
-                value='female'
-                onClick={ evt => setSheepGender(evt.target.value) }
-                ref={ radioTwo } />
-            <label htmlFor='female'>Female</label>
+            <div className='form-group m-0'>
+                <input
+                    className='ml-2 mr-1 gender-radio'
+                    name='genderRadios'
+                    type='radio'
+                    id='male'
+                    value='male'
+                    onClick={ evt => setSheepGender(evt.target.value) }
+                    ref={ radioOne } />
+                <label htmlFor='male' className='m-0'>Male</label>
+            </div>
+            <div className='form-group m-0'>
+                <input
+                    className='ml-2 mr-1 gender-radio'
+                    name='genderRadios'
+                    type='radio'
+                    id='female'
+                    value='female'
+                    onClick={ evt => setSheepGender(evt.target.value) }
+                    ref={ radioTwo } />
+                <label htmlFor='female' className='m-0'>Female</label>
+            </div>
             <button
-                className='btn btn-dark ml-2'
+                className='btn btn-dark'
                 type='submit'
-                disabled={ sheepName === '' || sheepGender === null }>Add</button>
+                disabled={ sheepName === '' || sheepGender === null }>ADD</button>
         </form>
     )
 }

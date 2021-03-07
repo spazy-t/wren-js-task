@@ -15,7 +15,7 @@ const NoSheepModal = () => {
                         <h5 className='modal-title'>Mating unsuccessful, this time</h5>
                     </div>
                     <div className='modal-footer d-flex justify-content-center'>
-                        <button type='button' className='btn btn-dark' data-dismiss='modal'>Close</button>
+                        <button type='button' className='btn btn-dark' data-dismiss='modal'>CLOSE</button>
                     </div>
                 </div>
             </div>
