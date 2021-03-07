@@ -14,11 +14,6 @@ const Menu = (props) => {
     const { toBrand, toMate, handleBranding, addSheep, clearClicked } = props
     const [babyGender, setBabyGender] = useState(null)
 
-    /*useEffect(() => {
-        $('#noSheep').modal('show')
-    })*/
-    
-
     const handleBrandClick = (evt) => {
         evt.preventDefault()
 

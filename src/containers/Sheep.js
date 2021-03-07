@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
+import $ from 'jquery'
 
 import { sheepClicked, clearClicked } from '../actions/clicked'
 import SheepImg from '../images/sheep.svg'
-import $ from 'jquery'
 
 //component to display a sheep when added
 const Sheep = (props) => {
-    const { sheepClicked, clearClicked, clickedNumber, sheepDetails } = props
+    const { sheepClicked, clearClicked, clickedNumber, clickedArr, sheepDetails, id } = props
     //ref to enable addition of branded class if branded
     const sheep = useRef(null)
 
@@ -16,6 +16,12 @@ const Sheep = (props) => {
         if(sheepDetails.branded) {
             sheep.current.classList.add('branded')
         }
+
+        //when re-rendered check to see if current sheep id matches one in the clicked arr, if so -> highlight
+        const matchClicked = clickedArr.filter(clicked => clicked.id === id)
+        matchClicked.length === 1
+            ? sheep.current.classList.add('selected')
+            : sheep.current.classList.remove('selected')
 
         //jquery to enable tooltips
         $('.tip').tooltip('enable')
@@ -30,6 +36,7 @@ const Sheep = (props) => {
         if(clickedNumber === 2) {
             clearClicked()
         }
+        
         //add clicked sheep to clicked array
         sheepClicked(sheepDetails)
     }
@@ -52,7 +59,8 @@ const Sheep = (props) => {
 function mapStateToProps({ sheep, clicked }, { id }) {
     return {
         sheepDetails: sheep[id],
-        clickedNumber: clicked.arr.length
+        clickedNumber: clicked.arr.length,
+        clickedArr: clicked.arr
     }
 }
 

@@ -13,6 +13,10 @@ $sheepSizing: 40px;
         cursor: pointer;
     }
 
+    &.selected {
+        fill: #00ffff;
+    }
+
     &.branded {
         fill: #9acd32;
         pointer-events: none;
