@@ -2,10 +2,12 @@
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 $sheepSizing: 40px;
 
-.gender-radio:hover {
-    cursor: pointer;
+body {
+    font-family: 'Fredoka One', cursive;
 }
 
 .sheep {
@@ -65,6 +67,10 @@ $sheepSizing: 40px;
 
 .sheep-name {
     width: 100%;
+}
+
+.gender-radio:hover {
+    cursor: pointer;
 }
 
 @include media-breakpoint-up(lg) {
