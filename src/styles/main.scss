@@ -10,6 +10,11 @@ body {
     font-family: 'Fredoka One', cursive;
 }
 
+//fix to stop modal adding right padding to body when modal shown
+.fix[style] {
+    padding-right: 0 !important;
+}
+
 .sheep {
     width: $sheepSizing;
     height: $sheepSizing;

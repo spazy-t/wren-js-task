@@ -31,6 +31,7 @@ const AddSheepForm = (props) => {
     return(
         <form className='add-sheep-form' onSubmit={ handleSubmit }>
             <input
+                autoFocus={ true }
                 className='sheep-name'
                 type='text'
                 placeholder='New sheep name'

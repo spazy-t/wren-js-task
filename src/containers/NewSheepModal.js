@@ -9,6 +9,15 @@ const NewSheepModal = (props) => {
     const { addSheep, gender } = props
     const [babyName, setBabyName] = useState('')
 
+    //use jquery from bootstrap to add focus on input when modal shown
+    useEffect(() => {
+        $('#newSheep').on('shown.bs.modal', function () {
+            $('#newSheepName').trigger('focus')
+            //fix to stop modal adding right padding to body when modal shown
+            $('body').addClass('fix')
+        })
+    })
+
     //handles adding new sheep to store state with passed in random gender and fallback name
     const handleSubmit = (evt) => {
         evt.preventDefault()
@@ -21,23 +30,25 @@ const NewSheepModal = (props) => {
 
         //hide modal
         $('#newSheep').modal('hide')
+        setBabyName('')
     }
 
     return(
-        <div className='modal fade' data-backdrop='static' id='newSheep' tabIndex='-1'>
+        <div className='modal' data-backdrop='static' id='newSheep' tabIndex='-1'>
             <div className='modal-dialog'>
                 <div className='modal-content'>
                     <div className='modal-header d-flex justify-content-center'>
-                        <h5>It's a { gender === 'male' ? 'boy' : 'girl' }</h5>
+                        <h5 className='m-0'>It's a { gender === 'male' ? 'boy' : 'girl' }</h5>
                     </div>
                     <div className='modal-body d-flex justify-content-center'>
-                        <form onSubmit={ handleSubmit }>
+                        <form className='d-flex flex-column' onSubmit={ handleSubmit }>
                             <input
+                                id='newSheepName'
                                 type='text'
                                 placeholder='Enter new name'
                                 value={ babyName }
                                 onChange={ (evt) => setBabyName(evt.target.value) } />
-                            <button className='btn btn-dark ml-1' type='submit'>ADD</button>
+                            <button className='btn btn-dark mt-1' type='submit'>ADD</button>
                         </form>
                     </div>
                 </div>

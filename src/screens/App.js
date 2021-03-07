@@ -7,7 +7,7 @@ import Menu from '../containers/Menu'
 
 const App = () => {
     return(
-        <main className='vh-100 container'>
+        <main className='container'>
             <Menu />
             <Field />
         </main>

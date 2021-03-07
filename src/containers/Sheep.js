@@ -46,7 +46,7 @@ const Sheep = (props) => {
         <div
             className='sheep m-1 tip'
             data-toggle='tooltip'
-            data-placement='right'
+            data-placement='bottom'
             title={ `${sheepDetails.name}: ${sheepDetails.gender}` }
             onClick={ handleClick }
             ref={ sheep }>
