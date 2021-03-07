@@ -39,12 +39,11 @@ body {
     }
 
     &.selected {
-        fill: #00ffff;
+        fill: #00ffff !important;
     }
 
     &.branded {
         fill: #9acd32;
-        pointer-events: none;
     }
 }
 
