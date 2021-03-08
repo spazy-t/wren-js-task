@@ -49,6 +49,8 @@ body {
 
 .field {
     min-height: 50vh;
+    border-radius: 0.3em;
+    border: 2px solid #a52a2a;
 }
 
 /*
@@ -85,6 +87,7 @@ body {
 
 .sheep-name {
     width: 100%;
+    border-radius: 0.3em;
 }
 
 .gender-radio:hover {
