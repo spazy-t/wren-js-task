@@ -17,8 +17,7 @@ The app is written using [TypeScript](https://www.typescriptlang.org/). The bund
 ## Breeding rules
 * The sheep can't be branded, if they are you can't select them for breeding.
 * One sheep must be male and one female.
-* upon correctly selecting the sheep and pressing the mate button, there is a 50% chance of breeding via `handleMateClick` function in `Menu.js`, after
-passing the helper method `checkCompatibility` in `helpers.js`.
+* upon correctly selecting the sheep and pressing the mate button, there is a 50% chance of breeding via `handleMateClick` function in `src/containers/Menu.js`, after passing the helper method `checkCompatibility` in `src/utils/helpers.js`.
 
 ## Other features
 * When you select up to two sheep in the field they will be highlighted blue.
